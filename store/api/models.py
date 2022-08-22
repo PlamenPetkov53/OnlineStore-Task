@@ -14,5 +14,5 @@ class Product(models.Model):
 
 class Order(models.Model):
       date = models.DateTimeField()
-      products = models.ForeignKey("Product", on_delete=models.CASCADE)
+      products = models.ManyToManyField(Product)
       history = HistoricalRecords()
